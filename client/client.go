@@ -10,7 +10,8 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost:9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial("localhost:9001", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	//fmt.Println(err, conn)
 	if err != nil {
 		log.Panicln(err)
 		panic(err)
@@ -20,5 +21,11 @@ func main() {
 
 	req := &proto.HelloRequest{SomeString: "Hello from client"}
 
-	client.ServerReply(context.TODO(), req)
+	res, err := client.ServerReply(context.TODO(), req)
+	if err != nil {
+		log.Panicln(err)
+		panic(err)
+	}
+
+	log.Println(res)
 }
