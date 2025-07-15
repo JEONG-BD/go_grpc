@@ -1,6 +1,7 @@
 syntax = "proto3"; 
 
 option go_package = "./";
+//option go_package = "grpc/proto;proto";
 
 message HelloRequest {
     string SomeString = 1; 
