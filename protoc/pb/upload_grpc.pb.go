@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: Upload.proto
+// source: upload.proto
 
 package __
 
@@ -110,5 +110,5 @@ var StreamUpload_ServiceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "Upload.proto",
+	Metadata: "upload.proto",
 }
