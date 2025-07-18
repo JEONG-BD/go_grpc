@@ -1,14 +1,28 @@
 syntax = "proto3";
 
+import "memory_message.proto"; 
+
+
 option go_package = "./";
 
+// camelCase 
 message CPU {
+    // snakeCase
     string brand = 1;
     string name = 2; 
     uint32 number_cores = 3; 
     uint32 number_threads = 4;
     float min_ghz = 5; 
     double max_ghz = 6; 
+
+}
+
+message GPU {
+    string brand = 1;
+    string name = 2; 
+    float min_ghz = 3; 
+    double max_ghz = 4; 
+    Memory meory = 5;
 
 }
 
