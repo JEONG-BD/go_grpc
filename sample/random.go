@@ -7,6 +7,11 @@ import (
 	"github.com/google/uuid"
 )
 
+func init() {
+	//rand.Seed(time.Now().UnixNano())
+	rand.Seed(10)
+}
+
 func randomKeyboardLayout() pb.Keyboard_Layout {
 	switch rand.Intn(3) {
 	case 1:
