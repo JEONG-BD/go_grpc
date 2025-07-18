@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: laptop_message.proto
 
-package __
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -28,7 +28,7 @@ type Laptop struct {
 	Brand    string                 `protobuf:"bytes,2,opt,name=brand,proto3" json:"brand,omitempty"`
 	Name     string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Cpu      *CPU                   `protobuf:"bytes,4,opt,name=cpu,proto3" json:"cpu,omitempty"`
-	Ran      *Memory                `protobuf:"bytes,5,opt,name=ran,proto3" json:"ran,omitempty"`
+	Ram      *Memory                `protobuf:"bytes,5,opt,name=ram,proto3" json:"ram,omitempty"`
 	Gpus     []*GPU                 `protobuf:"bytes,6,rep,name=gpus,proto3" json:"gpus,omitempty"`
 	Storages []*Storage             `protobuf:"bytes,7,rep,name=storages,proto3" json:"storages,omitempty"`
 	Screen   *Screen                `protobuf:"bytes,8,opt,name=screen,proto3" json:"screen,omitempty"`
@@ -103,9 +103,9 @@ func (x *Laptop) GetCpu() *CPU {
 	return nil
 }
 
-func (x *Laptop) GetRan() *Memory {
+func (x *Laptop) GetRam() *Memory {
 	if x != nil {
-		return x.Ran
+		return x.Ram
 	}
 	return nil
 }
@@ -210,7 +210,7 @@ const file_laptop_message_proto_rawDesc = "" +
 	"\x05brand\x18\x02 \x01(\tR\x05brand\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12\x16\n" +
 	"\x03cpu\x18\x04 \x01(\v2\x04.CPUR\x03cpu\x12\x19\n" +
-	"\x03ran\x18\x05 \x01(\v2\a.MemoryR\x03ran\x12\x18\n" +
+	"\x03ram\x18\x05 \x01(\v2\a.MemoryR\x03ram\x12\x18\n" +
 	"\x04gpus\x18\x06 \x03(\v2\x04.GPUR\x04gpus\x12$\n" +
 	"\bstorages\x18\a \x03(\v2\b.StorageR\bstorages\x12\x1f\n" +
 	"\x06screen\x18\b \x01(\v2\a.ScreenR\x06screen\x12%\n" +
@@ -223,7 +223,7 @@ const file_laptop_message_proto_rawDesc = "" +
 	"\frelease_year\x18\r \x01(\rR\vreleaseYear\x129\n" +
 	"\n" +
 	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB\b\n" +
-	"\x06weightB\x04Z\x02./b\x06proto3"
+	"\x06weightB\x06Z\x04.;pbb\x06proto3"
 
 var (
 	file_laptop_message_proto_rawDescOnce sync.Once
@@ -250,7 +250,7 @@ var file_laptop_message_proto_goTypes = []any{
 }
 var file_laptop_message_proto_depIdxs = []int32{
 	1, // 0: Laptop.cpu:type_name -> CPU
-	2, // 1: Laptop.ran:type_name -> Memory
+	2, // 1: Laptop.ram:type_name -> Memory
 	3, // 2: Laptop.gpus:type_name -> GPU
 	4, // 3: Laptop.storages:type_name -> Storage
 	5, // 4: Laptop.screen:type_name -> Screen

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "./";
-
+//option go_package = "./";
+option go_package = ".;pb"; 
 message UploadRequest {
     string file_path = 1; 
     bytes chunks =2; 

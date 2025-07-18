@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: keyboard_message.proto
 
-package __
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -140,7 +140,7 @@ const file_keyboard_message_proto_rawDesc = "" +
 	"\n" +
 	"\x06QWERTZ\x10\x02\x12\n" +
 	"\n" +
-	"\x06AZERTY\x10\x03B\x04Z\x02./b\x06proto3"
+	"\x06AZERTY\x10\x03B\x06Z\x04.;pbb\x06proto3"
 
 var (
 	file_keyboard_message_proto_rawDescOnce sync.Once

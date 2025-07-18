@@ -1,7 +1,8 @@
 syntax = "proto3";
 
-option go_package = "./";
-
+//option go_package = "./";
+//option go_package = "grpc/pb;pb";
+option go_package = ".;pb";
 import "memory_message.proto";
 
 message Storage {
@@ -12,6 +13,6 @@ message Storage {
     }
 
     Driver driver = 1; 
-    Memory meory = 2; 
+    Memory memory = 2; 
 
 }

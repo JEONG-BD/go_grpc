@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: storage_message.proto
 
-package __
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -73,7 +73,7 @@ func (Storage_Driver) EnumDescriptor() ([]byte, []int) {
 type Storage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Driver        Storage_Driver         `protobuf:"varint,1,opt,name=driver,proto3,enum=Storage_Driver" json:"driver,omitempty"`
-	Meory         *Memory                `protobuf:"bytes,2,opt,name=meory,proto3" json:"meory,omitempty"`
+	Memory        *Memory                `protobuf:"bytes,2,opt,name=memory,proto3" json:"memory,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -115,9 +115,9 @@ func (x *Storage) GetDriver() Storage_Driver {
 	return Storage_UNKNOWN
 }
 
-func (x *Storage) GetMeory() *Memory {
+func (x *Storage) GetMemory() *Memory {
 	if x != nil {
-		return x.Meory
+		return x.Memory
 	}
 	return nil
 }
@@ -126,14 +126,14 @@ var File_storage_message_proto protoreflect.FileDescriptor
 
 const file_storage_message_proto_rawDesc = "" +
 	"\n" +
-	"\x15storage_message.proto\x1a\x14memory_message.proto\"z\n" +
+	"\x15storage_message.proto\x1a\x14memory_message.proto\"|\n" +
 	"\aStorage\x12'\n" +
-	"\x06driver\x18\x01 \x01(\x0e2\x0f.Storage.DriverR\x06driver\x12\x1d\n" +
-	"\x05meory\x18\x02 \x01(\v2\a.MemoryR\x05meory\"'\n" +
+	"\x06driver\x18\x01 \x01(\x0e2\x0f.Storage.DriverR\x06driver\x12\x1f\n" +
+	"\x06memory\x18\x02 \x01(\v2\a.MemoryR\x06memory\"'\n" +
 	"\x06Driver\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\a\n" +
 	"\x03HDD\x10\x01\x12\a\n" +
-	"\x03SSD\x10\x02B\x04Z\x02./b\x06proto3"
+	"\x03SSD\x10\x02B\x06Z\x04.;pbb\x06proto3"
 
 var (
 	file_storage_message_proto_rawDescOnce sync.Once
@@ -156,7 +156,7 @@ var file_storage_message_proto_goTypes = []any{
 }
 var file_storage_message_proto_depIdxs = []int32{
 	0, // 0: Storage.driver:type_name -> Storage.Driver
-	2, // 1: Storage.meory:type_name -> Memory
+	2, // 1: Storage.memory:type_name -> Memory
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

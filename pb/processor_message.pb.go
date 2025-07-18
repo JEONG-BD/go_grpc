@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: processor_message.proto
 
-package __
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -29,7 +29,7 @@ type CPU struct {
 	Name          string  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	NumberCores   uint32  `protobuf:"varint,3,opt,name=number_cores,json=numberCores,proto3" json:"number_cores,omitempty"`
 	NumberThreads uint32  `protobuf:"varint,4,opt,name=number_threads,json=numberThreads,proto3" json:"number_threads,omitempty"`
-	MinGhz        float32 `protobuf:"fixed32,5,opt,name=min_ghz,json=minGhz,proto3" json:"min_ghz,omitempty"`
+	MinGhz        float64 `protobuf:"fixed64,5,opt,name=min_ghz,json=minGhz,proto3" json:"min_ghz,omitempty"`
 	MaxGhz        float64 `protobuf:"fixed64,6,opt,name=max_ghz,json=maxGhz,proto3" json:"max_ghz,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -93,7 +93,7 @@ func (x *CPU) GetNumberThreads() uint32 {
 	return 0
 }
 
-func (x *CPU) GetMinGhz() float32 {
+func (x *CPU) GetMinGhz() float64 {
 	if x != nil {
 		return x.MinGhz
 	}
@@ -111,7 +111,7 @@ type GPU struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Brand         string                 `protobuf:"bytes,1,opt,name=brand,proto3" json:"brand,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	MinGhz        float32                `protobuf:"fixed32,3,opt,name=min_ghz,json=minGhz,proto3" json:"min_ghz,omitempty"`
+	MinGhz        float64                `protobuf:"fixed64,3,opt,name=min_ghz,json=minGhz,proto3" json:"min_ghz,omitempty"`
 	MaxGhz        float64                `protobuf:"fixed64,4,opt,name=max_ghz,json=maxGhz,proto3" json:"max_ghz,omitempty"`
 	Meory         *Memory                `protobuf:"bytes,5,opt,name=meory,proto3" json:"meory,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -162,7 +162,7 @@ func (x *GPU) GetName() string {
 	return ""
 }
 
-func (x *GPU) GetMinGhz() float32 {
+func (x *GPU) GetMinGhz() float64 {
 	if x != nil {
 		return x.MinGhz
 	}
@@ -193,14 +193,14 @@ const file_processor_message_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12!\n" +
 	"\fnumber_cores\x18\x03 \x01(\rR\vnumberCores\x12%\n" +
 	"\x0enumber_threads\x18\x04 \x01(\rR\rnumberThreads\x12\x17\n" +
-	"\amin_ghz\x18\x05 \x01(\x02R\x06minGhz\x12\x17\n" +
+	"\amin_ghz\x18\x05 \x01(\x01R\x06minGhz\x12\x17\n" +
 	"\amax_ghz\x18\x06 \x01(\x01R\x06maxGhz\"\x80\x01\n" +
 	"\x03GPU\x12\x14\n" +
 	"\x05brand\x18\x01 \x01(\tR\x05brand\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x17\n" +
-	"\amin_ghz\x18\x03 \x01(\x02R\x06minGhz\x12\x17\n" +
+	"\amin_ghz\x18\x03 \x01(\x01R\x06minGhz\x12\x17\n" +
 	"\amax_ghz\x18\x04 \x01(\x01R\x06maxGhz\x12\x1d\n" +
-	"\x05meory\x18\x05 \x01(\v2\a.MemoryR\x05meoryB\x04Z\x02./b\x06proto3"
+	"\x05meory\x18\x05 \x01(\v2\a.MemoryR\x05meoryB\x06Z\x04.;pbb\x06proto3"
 
 var (
 	file_processor_message_proto_rawDescOnce sync.Once
