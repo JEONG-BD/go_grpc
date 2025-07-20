@@ -2,3 +2,4 @@ README_NOTE.md
 *.bin 
 *.json
 .DS_Store 
+serializer/output.txt
