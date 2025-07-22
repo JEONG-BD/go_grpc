@@ -14,6 +14,7 @@ var ErrAllreadyExists = errors.New("recorf already exists")
 
 type LaptopStore interface {
 	Save(laptop *pb.Laptop) error
+	Find(id string) (*pb.Laptop, error)
 }
 
 type InMemoryLaptopStore struct {
@@ -43,4 +44,24 @@ func (store *InMemoryLaptopStore) Save(laptop *pb.Laptop) error {
 	}
 	store.data[other.Id] = other
 	return nil
+}
+
+func (store *InMemoryLaptopStore) Find(id string) (*pb.Laptop, error) {
+	// 읽기 잠금 획득
+	store.mutex.RLock()
+	// 읽기 잠금 해제
+	defer store.mutex.RUnlock()
+
+	laptop := store.data[id]
+	if laptop == nil {
+		return nil, nil
+	}
+
+	other := &pb.Laptop{}
+	err := copier.Copy(other, laptop)
+	if err != nil {
+		return nil, fmt.Errorf("can not laptop data : %w", err)
+	}
+
+	return other, nil
 }
